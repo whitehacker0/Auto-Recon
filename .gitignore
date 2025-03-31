@@ -1,0 +1,22 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore sensitive files
+*.log
+*.env
+*.sqlite3
+config.json
+secrets.json
+
+# Ignore personal files
+node_modules/
