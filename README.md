@@ -21,7 +21,7 @@ Penetration testers can leverage this tool to:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/WallaceScott240/osint-multi-recon-tool.git
+   git clone https://github.com/WallaceScott240/Auto-Recon.git
    cd osint-multi-recon-tool
    ```
 2. Install dependencies:
@@ -55,8 +55,8 @@ python osint_tool.py
 │-- 📜 subdomain_recon.py      # Subdomain reconnaissance module
 │-- 📜 config.py               # Configuration file (if needed)
 │-- 📜 requirements.txt        # Required Python libraries
-│-- 📜 whoisdata.txt           # WHOIS lookup results
-│-- 📜 subdomains_xxx.txt      # Subdomain reconnaissance results
+│-- 📜 whois.txt           # WHOIS lookup results
+│-- 📜 subdomain.txt      # Subdomain reconnaissance results
 │-- 📜 githubdata.txt          # GitHub reconnaissance results
 ```
 
