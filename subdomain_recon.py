@@ -5,7 +5,7 @@ def get_crtsh_subdomains(domain):
     url = f"https://crt.sh/?q=%25.{domain}&output=json"
     subdomains = set()
     try:
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, timeout=10, verify=False)  # Disable SSL verification
         if response.status_code == 200:
             json_data = response.json()
             subdomains.update(entry['name_value'].strip() for entry in json_data)
@@ -33,7 +33,7 @@ def find_subdomains(domain):
     save_subdomains(domain, subdomains)
 
 def save_subdomains(domain, subdomains):
-    filename = f"subdomains_{domain}.txt"
+    filename = "subdomain.txt"  # Fixed filename
     with open(filename, "w", encoding="utf-8") as file:
         file.write("🔍 Subdomain Enumeration Report\n")
         file.write("====================================\n\n")

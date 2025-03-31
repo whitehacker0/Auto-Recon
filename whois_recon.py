@@ -12,12 +12,12 @@ def whois_lookup(domain):
             "🔄 Updated Date": domain_info.updated_date,
             "🖧 Name Servers": domain_info.name_servers,
             "🔒 Status": domain_info.status,
-            "🏢 Registrant": domain_info.org if hasattr(domain_info, "org") else "Private",
-            "📧 Emails": domain_info.emails if hasattr(domain_info, "emails") else "Not Available",
-            "🌎 Country": domain_info.country if hasattr(domain_info, "country") else "Unknown"
+            "🏢 Registrant": getattr(domain_info, "org", "Private"),
+            "📧 Emails": getattr(domain_info, "emails", "Not Available"),
+            "🌎 Country": getattr(domain_info, "country", "Unknown")
         }
         
-        filename = f"whois_{domain.replace('.', '_')}.txt"
+        filename = "whois.txt"  # Fixed filename
         with open(filename, "w", encoding="utf-8") as file:
             file.write("🌍 WHOIS Lookup Report\n")
             file.write("=" * 40 + "\n\n")
